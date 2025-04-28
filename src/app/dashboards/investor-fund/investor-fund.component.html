@@ -1,0 +1,6 @@
+<div>
+  <h3>{{ 'investor_dashboard.submit_fund_request' | translate }}</h3>
+  <label for="additionalFundRequest">{{ 'investor_dashboard.additional_fund_amount' | translate }}</label>
+  <input type="number" id="additionalFundRequest" [(ngModel)]="additionalFundRequest" placeholder="{{ 'investor_dashboard.enter_fund_amount' | translate }}" />
+  <button (click)="submitFundRequest()">{{ 'investor_dashboard.submit_request' | translate }}</button>
+</div>

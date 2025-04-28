@@ -1,0 +1,73 @@
+.tabs {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  /*background-color: #f8f9fa;*/
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tabs button.active {
+  background-color: #3498db;
+  color: white;
+}
+
+.tabs button:hover {
+  background-color: #2980b9;
+  color: white;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #3498db;
+  color: white;
+}
+
+.portfolio-summary {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input[type="file"], input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}

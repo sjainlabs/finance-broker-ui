@@ -1,0 +1,80 @@
+<div class="loan-seeker-page">
+  <h2>{{ 'loan_seeker.header' | translate }}</h2>
+
+  <!-- Tabs for navigation -->
+  <div class="tabs">
+    <button [class.active]="activeTab === 'apply'" (click)="switchTab('apply')">
+      {{ 'loan_seeker.apply_for_loan' | translate }}
+    </button>
+    <button [class.active]="activeTab === 'status'" (click)="switchTab('status')">
+      {{ 'loan_seeker.loan_status' | translate }}
+    </button>
+  </div>
+
+  <!-- Tab Content -->
+  <div *ngIf="activeTab === 'apply'">
+    <h3>{{ 'loan_seeker.apply_for_loan' | translate }}</h3>
+    <form [formGroup]="loanForm" (ngSubmit)="submitApplication()">
+      <label for="amount">{{ 'loan_seeker.loan_amount' | translate }}</label>
+      <input
+        type="number"
+        id="amount"
+        formControlName="amount"
+        placeholder="{{ 'loan_seeker.enter_amount' | translate }}"
+      />
+      <div *ngIf="loanForm.get('amount')?.invalid && loanForm.get('amount')?.touched" class="error">
+        {{ 'loan_seeker.error_amount' | translate }}
+      </div>
+
+      <label for="purpose">{{ 'loan_seeker.loan_purpose' | translate }}</label>
+      <input
+        type="text"
+        id="purpose"
+        formControlName="purpose"
+        placeholder="{{ 'loan_seeker.enter_purpose' | translate }}"
+      />
+      <div *ngIf="loanForm.get('purpose')?.invalid && loanForm.get('purpose')?.touched" class="error">
+        {{ 'loan_seeker.error_purpose' | translate }}
+      </div>
+
+      <label for="duration">{{ 'loan_seeker.loan_duration' | translate }}</label>
+      <input
+        type="number"
+        id="duration"
+        formControlName="duration"
+        placeholder="{{ 'loan_seeker.enter_duration' | translate }}"
+      />
+      <div *ngIf="loanForm.get('duration')?.invalid && loanForm.get('duration')?.touched" class="error">
+        {{ 'loan_seeker.error_duration' | translate }}
+      </div>
+
+      <button type="submit" [disabled]="loanForm.invalid">{{ 'loan_seeker.submit_application' | translate }}</button>
+    </form>
+  </div>
+
+  <div *ngIf="activeTab === 'status'">
+    <h3>{{ 'loan_seeker.loan_status' | translate }}</h3>
+    <table>
+      <thead>
+      <tr>
+        <th>{{ 'loan_seeker.application_id' | translate }}</th>
+        <th>{{ 'loan_seeker.loan_amount' | translate }}</th>
+        <th>{{ 'loan_seeker.status' | translate }}</th>
+        <th>{{ 'loan_seeker.actions' | translate }}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let application of loanApplications">
+        <td>{{ application.id }}</td>
+        <td>${{ application.amount }}</td>
+        <td>{{ application.status }}</td>
+        <td>
+          <button *ngIf="application.status === 'Pending'" (click)="cancelApplication(application.id)">
+            {{ 'loan_seeker.cancel' | translate }}
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

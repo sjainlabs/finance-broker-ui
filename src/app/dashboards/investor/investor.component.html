@@ -1,0 +1,31 @@
+<div>
+  <h2>{{ 'investor_dashboard.header' | translate }}</h2>
+<!--  <ul>-->
+<!--    <li><a routerLink="/loans">{{ 'investor_dashboard.view_investments' | translate }}</a></li>-->
+<!--    <li><a routerLink="/loans/new">{{ 'investor_dashboard.fund_loans' | translate }}</a></li>-->
+<!--  </ul>-->
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button [class.active]="activeTab === 'portfolio'" (click)="switchTab('portfolio')">
+      {{ 'investor_dashboard.view_portfolio' | translate }}
+
+    </button>
+    <button [class.active]="activeTab === 'fund_request'" (click)="switchTab('fund_request')">
+      {{ 'investor_dashboard.submit_fund_request' | translate }}
+    </button>
+  </div>
+
+
+  <!-- Portfolio Tab -->
+  <div *ngIf="activeTab === 'portfolio'">
+    <h3>{{ 'investor_dashboard.current_portfolio' | translate }}</h3>
+    <app-investment-portfolio></app-investment-portfolio>
+  </div>
+
+  <!-- Fund Request Tab -->
+  <div *ngIf="activeTab === 'fund_request'">
+      <app-investor-fund></app-investor-fund>
+  </div>
+
+</div>

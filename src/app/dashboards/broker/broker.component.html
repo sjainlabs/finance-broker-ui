@@ -1,0 +1,43 @@
+<!--<div>-->
+<!--  <h2>ब्रोकर डैशबोर्ड</h2>-->
+<!--  <ul>-->
+<!--    <li><a routerLink="/agreements">समझौते प्रबंधित करें</a></li>-->
+<!--    <li><a routerLink="/earnings">अपनी आय देखें</a></li>-->
+<!--  </ul>-->
+<!--</div>-->
+
+<div class="broker-dashboard">
+  <h2>{{ 'broker_dashboard.header' | translate }}</h2>
+
+  <!-- Loan Requests -->
+  <div class="loan-requests">
+    <h3>{{ 'broker_dashboard.loan_requests' | translate }}</h3>
+    <table>
+      <thead>
+      <tr>
+        <th>{{ 'broker_dashboard.borrower' | translate }}</th>
+        <th>{{ 'broker_dashboard.amount' | translate }}</th>
+        <th>{{ 'broker_dashboard.status' | translate }}</th>
+        <th>{{ 'broker_dashboard.investor' | translate }}</th>
+        <th>{{ 'broker_dashboard.actions' | translate }}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let request of loanRequests">
+        <td>{{ request.borrower }}</td>
+        <td>${{ request.amount }}</td>
+        <td>{{ request.status }}</td>
+        <td>{{ request.investor }}</td>
+        <td>
+          <button *ngIf="request.status === 'Pending'" (click)="approveRequest(request.id)">
+            {{ 'broker_dashboard.approve' | translate }}
+          </button>
+          <button *ngIf="request.status === 'Pending'" (click)="rejectRequest(request.id)">
+            {{ 'broker_dashboard.reject' | translate }}
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

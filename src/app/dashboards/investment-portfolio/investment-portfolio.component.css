@@ -1,0 +1,39 @@
+.portfolio-container {
+  width: 80%;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+h2, h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.summary {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+thead {
+  background-color: #3498db;
+  color: white;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}

@@ -1,0 +1,45 @@
+.tabs {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tabs button.active {
+  background-color: #3498db;
+  color: white;
+}
+
+.tabs button:hover {
+  background-color: #2980b9;
+  color: white;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #3498db;
+  color: white;
+}

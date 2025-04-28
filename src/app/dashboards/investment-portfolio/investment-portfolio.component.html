@@ -1,0 +1,34 @@
+<div class="portfolio-container">
+<!--  <h2>Investor Portfolio</h2>-->
+
+  <!-- Summary Section -->
+  <div class="summary">
+    <p><strong>{{ 'investor_dashboard.total_investment' | translate }}:</strong> {{ totalInvestment }}</p>
+    <p><strong>{{ 'investor_dashboard.total_returns' | translate }}:</strong> {{ totalReturns | number: '1.2-2' }}</p>
+  </div>
+
+  <!-- Investment List -->
+  <div class="investments">
+    <h3>Investments</h3>
+    <table>
+      <thead>
+      <tr>
+        <th>{{ 'investor_dashboard.investment_name' | translate }}</th>
+        <th>{{ 'investor_dashboard.amount' | translate }}</th>
+        <th>{{ 'investor_dashboard.start_date' | translate }}</th>
+        <th>{{ 'investor_dashboard.returns' | translate }}</th>
+        <th>{{ 'investor_dashboard.status' | translate }}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let investment of investments">
+        <td>{{ investment.name }}</td>
+        <td>{{ investment.amount }}</td>
+        <td>{{ investment.date | date: 'longDate' }}</td>
+        <td>{{ investment.returns }}%</td>
+        <td>{{ investment.status }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

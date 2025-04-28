@@ -1,0 +1,58 @@
+<div class="register-container">
+  <h2>{{ 'register.header' | translate }}</h2>
+
+  <!-- User Type Selection -->
+  <div class="user-type">
+    <label>
+      <input type="radio" [(ngModel)]="userType" value="investor" />
+      {{ 'register.investor' | translate }}
+    </label>
+    <label>
+      <input type="radio" [(ngModel)]="userType" value="loan-seeker" />
+      {{ 'register.loan_seeker' | translate }}
+    </label>
+  </div>
+
+  <!-- Shared Fields -->
+  <label for="name">{{ 'register.name' | translate }}</label>
+  <input type="text" id="name" [(ngModel)]="name" placeholder="{{ 'register.enter_name' | translate }}" />
+
+  <label for="email">{{ 'register.email' | translate }}</label>
+  <input type="email" id="email" [(ngModel)]="email" placeholder="{{ 'register.enter_email' | translate }}" />
+
+  <label for="phone">{{ 'register.phone' | translate }}</label>
+  <input type="tel" id="phone" [(ngModel)]="phone" placeholder="{{ 'register.enter_phone' | translate }}" />
+
+  <label for="password">{{ 'register.password' | translate }}</label>
+  <input type="password" id="password" [(ngModel)]="password" placeholder="{{ 'register.enter_password' | translate }}" />
+
+  <!-- Investor-Specific Fields -->
+  <div *ngIf="userType === 'investor'">
+    <label for="investmentAmount">{{ 'register.investment_amount' | translate }}</label>
+    <input type="number" id="investmentAmount" [(ngModel)]="investmentAmount" placeholder="{{ 'register.enter_amount' | translate }}" />
+
+    <label>{{ 'register.upload_pan' | translate }}</label>
+    <input type="file" (change)="onFileUpload($event, 'pan')" />
+
+    <label>{{ 'register.upload_aadhaar' | translate }}</label>
+    <input type="file" (change)="onFileUpload($event, 'aadhaar')" />
+  </div>
+
+  <!-- Loan Seeker-Specific Fields -->
+  <div *ngIf="userType === 'loan-seeker'">
+    <label for="loanAmount">{{ 'register.loan_amount' | translate }}</label>
+    <input type="number" id="loanAmount" [(ngModel)]="loanAmount" placeholder="{{ 'register.enter_loan_amount' | translate }}" />
+
+    <label for="loanPurpose">{{ 'register.loan_purpose' | translate }}</label>
+    <input type="text" id="loanPurpose" [(ngModel)]="loanPurpose" placeholder="{{ 'register.enter_loan_purpose' | translate }}" />
+
+    <label>{{ 'register.upload_income_proof' | translate }}</label>
+    <input type="file" (change)="onFileUpload($event, 'income')" />
+
+    <label>{{ 'register.upload_id_proof' | translate }}</label>
+    <input type="file" (change)="onFileUpload($event, 'id')" />
+  </div>
+
+  <!-- Submit Button -->
+  <button (click)="submitRegistration()">{{ 'register.submit' | translate }}</button>
+</div>

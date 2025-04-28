@@ -1,0 +1,33 @@
+.broker-dashboard {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #3498db;
+  color: white;
+}
+
+button {
+  padding: 5px 10px;
+  color: white;
+  background-color: #2ecc71;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #27ae60;
+}
