@@ -1,0 +1,28 @@
+{
+  "landing": {
+    "welcome": "Welcome to Finance Broker App",
+    "description": "A secure and transparent platform for loans and investments.",
+    "get_started": "Get Started",
+    "learn_more": "Learn More"
+  },
+  "loan_seeker_dashboard": {
+    "header": "Loan Seeker Dashboard",
+    "view_requests": "View Your Loan Requests",
+    "new_request": "Request a New Loan"
+  },
+  "investor_dashboard": {
+    "header": "Investor Dashboard",
+    "view_investments": "View Investments",
+    "fund_loans": "Fund a Loan"
+  },
+  "broker_dashboard": {
+    "header": "Broker Dashboard",
+    "manage_agreements": "Manage Agreements",
+    "view_earnings": "View Earnings"
+  },
+  "admin_dashboard": {
+    "header": "Admin Dashboard",
+    "manage_users": "Manage Users",
+    "view_logs": "View Audit Logs"
+  }
+}

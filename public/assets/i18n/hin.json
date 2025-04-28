@@ -1,0 +1,28 @@
+{
+  "landing": {
+    "welcome": "वित्तीय ब्रोकर ऐप में आपका स्वागत है",
+    "description": "ऋण प्राप्त करने और निवेश करने के लिए एक सुरक्षित और पारदर्शी प्लेटफॉर्म।",
+    "get_started": "शुरू करें",
+    "learn_more": "अधिक जानें"
+  },
+  "loan_seeker_dashboard": {
+    "header": "ऋण अनुरोध डैशबोर्ड",
+    "view_requests": "अपने ऋण अनुरोध देखें",
+    "new_request": "नया ऋण अनुरोध करें"
+  },
+  "investor_dashboard": {
+    "header": "निवेशक डैशबोर्ड",
+    "view_investments": "निवेश देखें",
+    "fund_loans": "ऋण के लिए धन प्रदान करें"
+  },
+  "broker_dashboard": {
+    "header": "ब्रोकर डैशबोर्ड",
+    "manage_agreements": "समझौते प्रबंधित करें",
+    "view_earnings": "अपनी आय देखें"
+  },
+  "admin_dashboard": {
+    "header": "प्रशासनिक डैशबोर्ड",
+    "manage_users": "उपयोगकर्ता प्रबंधित करें",
+    "view_logs": "ऑडिट लॉग्स देखें"
+  }
+}
