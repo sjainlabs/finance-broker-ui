@@ -61,7 +61,13 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "sourceMap": false,
+              "optimization": true,
+              "buildOptimizer": true,
+              "extractCss": true,
+              "aot": true,
+              "prerender": false
             },
             "development": {
               "optimization": false,
@@ -96,7 +102,9 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-
+              "src/favicon.ico",
+              "src/assets",
+              "src/assets/i18n",
               {
                 "glob": "**/*",
                 "input": "public"
