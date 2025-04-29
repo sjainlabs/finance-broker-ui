@@ -26,10 +26,6 @@ FROM nginx:stable-alpine
 COPY --from=build /app/dist/browser /usr/share/nginx/html
 
 
-# Expose port 80 to allow access to the app
-EXPOSE 80
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-
-# Start Nginx
-CMD ["nginx", "-g", "daemon off;"]
-#CMD ["ng", "serve", "--host", "0.0.0.0"]
+CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'
