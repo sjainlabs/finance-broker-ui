@@ -22,7 +22,7 @@ FROM nginx:stable-alpine
 COPY --from=build /app/dist/finance-broker-ui /usr/share/nginx/html
 
 # Expose port 80 to allow access to the app
-EXPOSE 80
+EXPOSE 4000
 
 # Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
