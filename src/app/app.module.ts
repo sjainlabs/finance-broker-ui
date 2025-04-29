@@ -21,11 +21,11 @@ import { InvestorFundComponent } from './dashboards/investor-fund/investor-fund.
 
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+  return new TranslateHttpLoader(http);
 }
 
 export function translateInitializer(translate: TranslateService) {
-  return () => translate.use('hi'); // Set Hindi as the default language
+  return () => translate.use('hin'); // Set Hindi as the default language
 }
 
 

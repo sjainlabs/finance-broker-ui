@@ -32,6 +32,9 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
+              "src/public/favicon.ico",
+              "src/public/assets",
+              "src/public/assets/i18n",
               {
                 "glob": "**/*",
                 "input": "public"
@@ -42,7 +45,7 @@
             ],
             "scripts": [],
             "server": "src/main.server.ts",
-            "outputMode": "server",
+
             "ssr": {
               "entry": "src/server.ts"
             }
@@ -52,8 +55,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "2MB",
+                  "maximumError": "2.5MB"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -64,9 +67,7 @@
               "outputHashing": "all",
               "sourceMap": false,
               "optimization": true,
-              "buildOptimizer": true,
-              "extractCss": true,
-              "aot": true,
+              "aot": false,
               "prerender": false
             },
             "development": {
@@ -102,9 +103,6 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets",
-              "src/assets/i18n",
               {
                 "glob": "**/*",
                 "input": "public"

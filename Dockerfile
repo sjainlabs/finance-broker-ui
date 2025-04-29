@@ -1,5 +1,5 @@
 # Step 1: Use the Node.js image to build the app
-FROM node:18 AS build
+FROM node:22 AS build
 
 WORKDIR /app
 

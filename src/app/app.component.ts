@@ -16,6 +16,11 @@ export class AppComponent {
   role: string ='';
 
   constructor(private translate: TranslateService) {
+    // this.translate.addLangs(['en', 'hin']);
+    //
+    //
+    // const browserLang = this.translate.getBrowserLang();
+    // this.translate.use(browserLang?.match(/en|hin/) ? browserLang : 'hin');
 
     this.translate.setDefaultLang('hin'); // Default language is Hindi
     console.log(this.translate.instant('welcome'));
