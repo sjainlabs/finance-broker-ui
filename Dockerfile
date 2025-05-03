@@ -8,15 +8,17 @@ COPY package.json package-lock.json ./
 
 #COPY . /app
 # Install dependencies
+# Install dependencies
+# Install dependencies
 #RUN npm install -g @angular/cli
 RUN npm install
 
 # Copy the app source code
-COPY . .
+COPY . /app
 
 # Build the Angular app for production
 ARG configuration=production
-RUN npm run build -- --configuration $configuration
+RUN npm run build -- --configuration=production
 #RUN npm run build --prod
 
 # Step 2: Use Nginx to serve the app
